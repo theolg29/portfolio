@@ -1,0 +1,953 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    background-color: rgb(4, 1, 24);
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: Outfit;
+    color: rgb(241, 241, 241);
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-display: swap;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: rgb(32, 15, 147);
+}
+
+.titlesec h2 {
+    font-size: 3em;
+    text-align: center;
+}
+
+.soulignage {
+    position: relative;
+    top: -15px;
+    margin: 0 auto;
+    height: 8px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: rgb(32, 15, 147);
+}
+
+section {
+    margin-top: 150px;
+}
+
+/* ------------------------------------------------------- */
+/* Accueil - Navbar */
+
+.accueil_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(4, 1, 24, 0.1);
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+    padding: 15px 25px 15px 50px;
+    font-size: 1.1em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.accueil_nav .logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.accueil_nav .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.accueil_nav .logo h2 {
+    padding-left: 25px;
+    font-size: 1.2em;
+}
+
+.accueil_nav .links ul {
+    display: flex;
+}
+
+.accueil_nav .links ul li {
+    list-style: none;
+    margin-right: 25px;
+}
+
+.accueil_nav .links ul li a {
+    text-decoration: none;
+    color: rgb(241, 241, 241);
+    position: relative;
+}
+
+.accueil_nav .links ul li a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-radius: 50px;
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 300ms ease-in-out;
+}
+
+.accueil_nav .links ul li a:hover:before {
+    visibility: visible;
+    transform: scaleX(0.5);
+}
+
+.accueil_nav .menuburger {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    width: 35px;
+}
+
+.accueil_nav .cross {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    width: 35px;
+}
+
+.accueil_nav .menuburger.hide {
+    display: none;
+}
+  
+.accueil_nav .cross.hide {
+    display: none;
+}
+
+
+/* Accueil - Mini bio (Nom prénom et profession) */
+
+.accueil_minibio {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accueil_minibio img {
+    height: 225px;
+    width: 225px;
+    border-radius: 25px;
+}
+
+.accueil_minibio .text {
+    margin-left: 100px;
+    color: rgb(209, 209, 209);
+}
+
+.accueil_minibio .text h1 {
+    font-size: 3em;
+    font-weight: 600;
+}
+
+.accueil_minibio .text h2 {
+    font-size: 2em;
+    font-weight: 300;
+    color: rgb(121, 121, 121);
+}
+
+#recherche_alternance {
+    margin-top: -25px;
+}
+
+.accueil_typing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 80px 0px 100px;
+}
+
+.static-text {
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+.dynamic-text {
+    margin-left: -25px;
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+}
+
+.dynamic-text li {
+    list-style: none;
+    color: rgb(13, 109, 253);
+    font-size: 2.5em;
+    font-weight: 600;
+    top: 0;
+    position: relative;
+    animation: slide 12s steps(4) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+.dynamic-text li {
+    position: relative;
+}
+
+.dynamic-text li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(6, 2, 32);
+    border-left: 2px solid rgb(13, 109, 253);
+    animation: typing 3s steps(10) infinite;
+}
+
+@keyframes typing {
+
+    40%,
+    60% {
+        left: calc(100% + 30px);
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+.accueil_backblur {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.accueil_scroll_border {
+    margin: 0 auto;
+    position: relative;
+    top: -50px;
+    border-radius: 50px;
+    height: 70px;
+    width: 30px;
+    border: 3px solid #fff;
+}
+
+.accueil_scroll_mouse {
+    margin: 0 auto;
+    border-radius: 50px;
+    height: 15px;
+    width: 5px;
+    background-color: #fff;
+    animation: scrollmouse 3000ms infinite;
+}
+
+@keyframes scrollmouse {
+
+    0% {
+        background-color: rgba(255, 255, 255, 0);
+        transform: translateY(100%);
+    }
+
+    10% {
+        background-color: rgba(255, 255, 255);
+    }
+
+    50% {
+        transform: rotateY(120%);
+    }
+
+    100% {
+        transform: translateY(250%);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    
+}
+
+.accueil_fond {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: -1;
+    margin: -600px 0px 0px;
+}
+
+.accueil_fond img {
+    width: max-content;
+    height: 700px;
+    border: none;
+}
+
+
+@media screen and (max-width: 1800px){
+    .accueil_fond img{
+        width: 40%;
+    }
+}
+
+
+/* ------------------------------------------------------- */
+/* Présentation */
+
+.presentation_bio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(241, 241, 241);
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.presentation_bio img {
+    width: max-content;
+    height: 100%;
+}
+
+.presentation_bio .text {
+    margin-left: 75px;
+}
+
+.presentation_bio .text h2 {
+    font-size: 3em;
+}
+
+.presentation_bio .text p {
+    font-weight: 200;
+    font-size: 1.3em;
+}
+
+.presentation_bio .text button {
+    cursor: pointer;
+    border: none;
+    margin-top: 50px;
+    height: 80px;
+    width: 200px;
+    border: 5px solid rgb(32, 15, 147);
+    background-color: rgb(32, 15, 147, 0);
+    color: #fff;
+    border-radius: 10px;
+    font-size: 1.6em;
+    font-weight: 600;
+    transition: all 250ms ease-in-out;
+}
+
+.presentation_bio .text button:hover {
+    background-color: rgb(32, 15, 147);
+}
+
+/* ------------------------------------------------------- */
+/* Compétences */
+
+.competences_flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.competences_carres {
+    margin: 100px 100px 0px 100px;
+    height: auto;
+    width: 400px;
+    background-color: rgb(32, 30, 46);
+    border-radius: 20px;
+}
+
+.competences_carres .title {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px 0px 30px;
+    justify-content: start;
+    flex-wrap: wrap;
+    height: 100px;
+}
+
+.competences_carres .title h3 {
+    margin-left: 20px;
+    font-size: 1.5em;
+}
+
+.competences_carres .title img {
+    width: 10%;
+    height: 100%;
+}
+
+.competences_carres p {
+    margin-top: -5px;
+    font-size: 1.2em;
+    padding: 0px 30px 10px 30px;
+    font-weight: 200;
+}
+
+.competences_forme_gauche {
+    position: absolute;
+    z-index: -1;
+}
+
+.competences_forme_droite {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    transform: translateY(-300px);
+}
+
+/* ------------------------------------------------------- */
+/* Formations */
+
+.formations_progressbar {
+    margin-top: 100px;
+    width: max-content;
+    height: 100%;
+}
+
+.formations_progressbarmobile {
+    display: none;
+    margin: 0 auto;
+    height: 100%;
+    padding-top: 50px;
+}
+
+/* ------------------------------------------------------- */
+/* Mes projets - Critères de sélection */
+
+.projets_categories ul {
+    margin-top: 50px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.projets_categories ul li {
+    list-style: none;
+    padding: 20px 30px 20px 30px;
+    margin: 5px 5px;
+    border-radius: 10px;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+.projets_categories ul li:hover {
+    border: 5px solid rgb(32, 15, 147);
+    padding: 15px 25px 15px 25px;
+}
+
+.projets_categories_active {
+    background-color: rgb(32, 15, 147);
+}
+
+/* Mes projets - Projets */
+
+.projets_mesprojets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.projets_mesprojets_infos {
+    text-align: center;
+    text-decoration: none;
+    color: #f3f3f3;
+    margin: 20px 40px 20px 40px;
+    transition: ease-in-out 200ms;
+    scale: 95%;
+    filter: saturate(25%);
+}
+
+.projets_mesprojets_infos:hover {
+    scale: 100%;
+    filter: saturate(100%);
+}
+
+.projets_mesprojets_infos img {
+    height: 350px;
+    width: 500px;
+    border-radius: 25px;
+    transition: all ease-in-out 250ms;
+}
+
+.projets_mesprojets_infos h3 {
+    font-size: 1.5em;
+}
+
+.projets_mesprojets_infos p {
+    color: #818181;
+    margin-top: -15px;
+    font-size: 1em;
+}
+
+/* ------------------------------------------------------- */
+/* Contact */
+
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.contact_form label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 25px 0px 10px -20px;
+    width: 100%;
+}
+
+.contact_form input[type="text"],
+[type="email"],
+textarea {
+    background-color: rgb(4, 1, 24);
+    border: 3px solid #898989;
+    height: 30px;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.contact_form textarea {
+    height: 250px;
+    font-size: 1.3em;
+    resize: none;
+}
+
+.contact_form button {
+    border-radius: 10px;
+    font-size: 1.5em;
+    padding: 30px;
+    margin-top: 50px;
+    width: 150px;
+    background-color: rgb(32, 15, 147);
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+.contact_forme_gauche {
+    position: absolute;
+    z-index: -1;
+    width: 20%;
+    height: 100%;
+    transform: translateY(-300px);
+}
+
+.contact_forme_droite {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    transform: translateY(-800px);
+}
+
+/* ------------------------------------------------------- */
+/* Mes réseaux */
+
+.reseaux_mesreseaux {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 100px;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.reseaux_mesreseaux a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.5em;
+    text-decoration: none;
+    scale: 80%;
+}
+
+.reseaux_mesreseaux a img {
+    width: 100%;
+    height: 100%;
+}
+
+.reseaux_mesreseaux a h3 {
+    color: #fff;
+    font-weight: 300;
+}
+
+#reseaux_mail {
+    margin-bottom: 10px;
+}
+
+.reseaux_formes {
+    display: flex;
+    z-index: -1;
+
+    justify-content: space-between;
+}
+
+.reseaux_formes img {
+    width: 20%;
+    height: 100%;
+}
+
+/* ------------------------------------------------------- */
+/* Mot de la fin - Design by Théo */
+
+.motdefin {
+    text-align: center;
+    margin-top: -40px;
+}
+
+.mentionslegalesspan {
+    margin-left: 10px;
+    color: #fff;
+}
+
+/* ------------------------------------------------------- */
+/* Mentions légales */
+
+.mentionslegales {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.mentionslegales p {
+    color: #dddddd;
+}
+
+.mentionslegales ul li {
+    color: #dddddd;
+}
+
+.sectionlegales {
+    margin-bottom: 50px;
+}
+
+/* ------------------------------------------------------- */
+/* Pages de projets */
+
+.contenu {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.contenu .titres h1 {
+    font-size: 2.5em;
+}
+
+.contenu .titres p {
+    color: #8e8e8e;
+    margin: -25px 0px 50px;
+}
+
+.contenu img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.contenu .texts {
+    margin: 50px 0px 50px;
+    line-height: 25px;
+    font-family: Roboto;
+    color: #dddddd;
+}
+
+.contenu .texts p {
+    margin: 35px 0px 35px;
+}
+
+.contenu .texts a {
+    color: #fff;
+    padding: 15px;
+    background-color: rgb(32, 15, 147);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.contenu .retour {
+    margin: 50px 0px 50px;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.contenu .retour::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-radius: 50px;
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 300ms ease-in-out;
+}
+
+.contenu .retour:hover::before {
+    visibility: visible;
+    transform: scaleX(0.5);
+}
+
+/* ------------------------------------------------------- */
+/* Responsive */
+
+@media screen and (max-width: 850px) {
+
+    /* Titres de section */
+    .titlesec h2 {
+        font-size: 2.6em;
+    }
+
+    /* Menu de navigation */
+    .accueil_nav {
+        padding-bottom: 20px;
+        display: flex;
+        align-items: center;
+        background-color: rgb(4, 1, 24, 0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    .accueil_nav .menuburger {
+        z-index: 1;
+        display: block;
+        scale: 75%;
+        top: 35px;
+    }
+
+    .accueil_nav .cross {
+        z-index: 1;
+        display: block;
+        scale: 75%;
+        top: 32px;
+    }
+
+    .accueil_nav .links {
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 110%;
+        height: 100vh;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(4, 1, 24);
+        margin-left: 110%;
+        transition: all ease-in-out 500ms;
+    }
+
+    .accueil_nav .links.mobile-menu {
+        margin-left: 0;
+    }
+
+    .accueil_nav .links ul {
+        display: flex;
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .accueil_nav .links ul li {
+        margin-top: 25px;
+        font-size: 1.7em;
+    }
+
+    /* Page d'accueil / mini-bio */
+    .accueil_minibio {
+        flex-direction: column;
+    }
+
+    .accueil_minibio .text {
+        margin: -15px 0px 0px 0px;
+        text-align: center;
+    }
+
+    .accueil_minibio .text h1 {
+        font-size: 2.2em;
+    }
+
+    .accueil_minibio .text h2 {
+        font-size: 1.5em;
+    }
+
+    .accueil_minibio img {
+        scale: 65%;
+    }
+
+    .dynamic-text li::after {
+        background-color: rgb(4, 1, 24);
+    }
+
+    .accueil_fond {
+        width: 100%;
+        height: 1000px;
+        margin-bottom: -400px;
+    }
+
+    /* Présentation */
+    .presentation_bio {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+    }
+
+    .presentation_bio img {
+        margin-bottom: 50px;
+        width: 90%;
+        height: 100%;
+    }
+
+    .presentation_bio .text {
+        margin: -50px 0px 0px 0px;
+        width: 90%;
+    }
+
+    /* Compétences */
+    .competences_carres {
+        width: 450px;
+        margin: 50px 50px 0px 50px;
+    }
+
+    .competences_carres .title h3 {
+        font-size: 1.5em;
+    }
+
+    .competences_carres p {
+        font-size: 1.2em;
+    }
+
+    .competences_forme_gauche {
+        width: 30%;
+    }
+
+    .competences_forme_droite {
+        transform: translateY(-100px);
+        width: 30%;
+    }
+
+    /* Formations */
+    .formations_progressbarmobile {
+        display: block;
+    }
+
+    .formations_progressbar {
+        display: none;
+    }
+
+    /* Mes projets - Critères de sélection */
+    .projets_categories ul li {
+        font-size: 1.2em;
+    }
+
+    /* Mes projets - Projets */
+    .projets_mesprojets .infos {
+        scale: 90%;
+    }
+
+    .projets_mesprojets .infos:hover {
+        scale: 95%;
+    }
+
+    @media screen and (max-width: 500px) {
+
+        .projets_mesprojets_infos {
+            scale: 60%;
+            margin: -50px 0px -50px;
+        }
+
+        .projets_mesprojets_infos:hover {
+            scale: 63%;
+        }
+
+    }
+
+    .projets_mesprojets_infos h3 {
+        font-size: 2em;
+    }
+
+    .projets_mesprojets_infos p {
+        font-size: 1.4em;
+    }
+
+    /* Contact */
+    .contact_form {
+        width: 80%;
+    }
+
+    /* Mes réseaux */
+    .reseaux_mesreseaux {
+        scale: 80%;
+        margin: 0 auto;
+        padding-top: 50px;
+        width: 80%;
+    }
+
+    /* Pages de projets */
+    .contenu {
+        width: 80%;
+    }
+
+    /* Mentions légales */
+    .mentionslegales {
+        width: 80%;
+    }
+
+}
+
+/* ------------------------------------------------------- */
+/* Autres - Scroll bar */
+
+body::-webkit-scrollbar {
+    width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(32, 15, 147);
+    border-radius: 20px;
+}
+
+.decoration {
+    pointer-events: none;
+}
+
+/* Autres - Animation au défilement */
+
+.reveal {
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
