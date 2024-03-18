@@ -78,6 +78,8 @@
 
     </section>
 
+    <div class="smooth-scroll-wrapper">
+        <div class="content">
     <main>
 
         <!-- Présentation -->
@@ -112,7 +114,7 @@
 
                     <p>Mon apprentissage continue et ne s’arrêtera pas, bonne visite de mon Portfolio !</p>
 
-                    <a target="_blank" href="Assets/presentation/LE GOURRIEREC Théo CV.pdf"><button>Mon CV</button></a>
+                    <a target="_blank" href="Assets/presentation/CV.pdf"><button>Mon CV</button></a>
 
                 </div>
             </div>
@@ -357,10 +359,32 @@
 
         <p class="motdefin">Design By Théo Le Gourrierec - 2024<span><a class="mentionslegalesspan" href="mentionslegales.html">Mentions Légales</a></span></p>
     </main>
+</div>
     <script defer src="JS/menu_burger.js"></script>
     <script defer src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script defer src="JS/projects_active.js"></script>
     <script defer src="JS/scroll_animation.js"></script>
+    <!-- <script>
+        const body = document.body,
+            scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
+            height = scrollWrap.getBoundingClientRect().height - 1,
+            speed = 0.04;
+
+        var offset = 0;
+
+        body.style.height = (height) + "px";
+
+        function smoothScroll() {
+            offset += (window.pageYOffset - offset) * speed;
+
+            var scroll = "translateY(-" + offset + "px) translateZ(0)";
+            scrollWrap.style.transform = scroll;
+
+            callScroll = requestAnimationFrame(smoothScroll);
+        }
+
+        smoothScroll();
+    </script> -->
 </body>
 
 </html>
